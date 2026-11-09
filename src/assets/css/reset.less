@@ -1,0 +1,22 @@
+// 1. 基础盒模型统一 (必须放在最前面)
+* {
+	box-sizing: border-box;
+}
+
+// 2. 关键表单控件字体与行高还原
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	line-height: normal;
+}
+
+// 3. 可复用的变量与 Mixin (按需取用)
+@reset-font-size: 16px; // 允许其他文件覆盖此默认值
+
+.reset-body() {
+	margin: 0;
+	font-size: @reset-font-size;
+	line-height: 1.5; // 可根据项目需要调整
+}
